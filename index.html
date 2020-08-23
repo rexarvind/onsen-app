@@ -36,6 +36,7 @@
   <template id="index.html">
     <ons-page>
       <ons-toolbar>
+
         <div class="center">
           Splitter+Navigator
         </div>
@@ -81,7 +82,7 @@ window.fn.load = function (page) {
       var myNavigator = document.getElementById('myNavigator');
 
       menu.close();
-      myNavigator.resetToPage(page, { animation: 'slide' });
+      myNavigator.resetToPage(page, { animation: 'fade' });
     };
 
   
