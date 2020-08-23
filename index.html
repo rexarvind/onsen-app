@@ -1,0 +1,94 @@
+<!doctype html> <html lang="en" dir="ltr">
+<head><meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Be Fit App</title>
+
+<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css"> 
+
+<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+</head>
+<body>
+
+
+<ons-splitter>
+    <ons-splitter-side id="menu" side="right" width="220px" collapse swipeable>
+      <ons-page>
+        <ons-list>
+          <ons-list-item onclick="fn.load('home.html')" tappable>
+            Home
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('ac.html')" tappable>
+            About
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('settings.html')" tappable>
+            Settings
+          </ons-list-item>
+        </ons-list>
+      </ons-page>
+    </ons-splitter-side>
+    <ons-splitter-content>
+      <ons-navigator id="myNavigator" page="home.html"></ons-navigator>
+    </ons-splitter-content>
+  </ons-splitter>
+
+  <template id="home.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="center">
+          Splitter+Navigator
+        </div>
+        <div class="right">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+      </ons-toolbar>
+
+      <h2>Home</h2>
+      <div style="text-align: center">
+        <br>
+        <ons-button onclick="myNavigator.pushPage('pageNav1.html')">
+          Push Page
+        </ons-button>
+      </div>
+
+      <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+        Swipe left to open the menu!
+      </p>
+    </ons-page>
+  </template>
+
+
+
+
+ 
+
+
+
+
+<script>
+
+window.fn = {};
+
+window.fn.open = function () {
+var menu = document.getElementById('menu');
+menu.open();
+};
+
+
+window.fn.load = function (page) {
+      var menu = document.getElementById('menu');
+      var myNavigator = document.getElementById('myNavigator');
+
+      menu.close();
+      myNavigator.resetToPage(page, { animation: 'slide' });
+    };
+
+  
+
+
+
+  </script>
+</body></html>
