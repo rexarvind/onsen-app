@@ -16,24 +16,24 @@
     <ons-splitter-side id="menu" side="right" width="220px" collapse swipeable>
       <ons-page>
         <ons-list>
-          <ons-list-item onclick="fn.load('home.html')" tappable>
+          <ons-list-item onclick="fn.load('index.html')" tappable>
             Home
           </ons-list-item>
-          <ons-list-item onclick="fn.load('ac.html')" tappable>
-            About
+          <ons-list-item onclick="fn.load('dosage.html')" tappable>
+            Dosage
           </ons-list-item>
-          <ons-list-item onclick="fn.load('settings.html')" tappable>
-            Settings
+          <ons-list-item onclick="fn.load('about.html')" tappable>
+            About
           </ons-list-item>
         </ons-list>
       </ons-page>
     </ons-splitter-side>
     <ons-splitter-content>
-      <ons-navigator id="myNavigator" page="home.html"></ons-navigator>
+      <ons-navigator id="myNavigator" page="index.html"></ons-navigator>
     </ons-splitter-content>
   </ons-splitter>
 
-  <template id="home.html">
+  <template id="index.html">
     <ons-page>
       <ons-toolbar>
         <div class="center">
@@ -49,9 +49,7 @@
       <h2>Home</h2>
       <div style="text-align: center">
         <br>
-        <ons-button onclick="myNavigator.pushPage('pageNav1.html')">
-          Push Page
-        </ons-button>
+       
       </div>
 
       <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
