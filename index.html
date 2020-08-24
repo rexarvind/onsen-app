@@ -2,93 +2,150 @@
 <head><meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Be Fit App</title>
+<title>Savrex Web Store</title>
 
 <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css"> 
+<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+<link rel="stylesheet" href="main.css">
 
-<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-
-<style>
-
-.yt-div {position:relative; width:100%;
- overflow:hidden; padding-top:56.25%;
- margin-bottom:1rem;
- border:1px solid #e0e0e0;}
-
-.yt-iframe {position:absolute; top:0; left:0;
- bottom:0; right:0; width:100%; height:100%;
- border:0}
-
-</style>
 </head>
-<body>
-
+<body onbeforeunload="HandleBackFunctionality()">
 
 <ons-splitter>
-    <ons-splitter-side id="menu" side="right" width="220px" collapse swipeable>
-      <ons-page>
-        <ons-list>
-          <ons-list-item onclick="fn.load('index.html')" tappable>
-            Home
-          </ons-list-item>
-          <ons-list-item onclick="fn.load('dosage.html')" tappable>
-            Dosage
-          </ons-list-item>
-          <ons-list-item onclick="fn.load('about.html')" tappable>
-            About
-          </ons-list-item>
-        </ons-list>
-      </ons-page>
-    </ons-splitter-side>
-    <ons-splitter-content>
-      <ons-navigator id="myNavigator" page="index.html"></ons-navigator>
-    </ons-splitter-content>
-  </ons-splitter>
+<ons-splitter-side id="menu" side="right" width="220px" collapse swipeable>
+<ons-page>
+<ons-list>
+<ons-list-item onclick="fn.load('index.html')" tappable>Home</ons-list-item>
 
-  <template id="index.html">
-    <ons-page>
-      <ons-toolbar>
+<ons-list-item onclick="rexLoginForm()" tappable>Login</ons-list-item>
 
-        <div class="center">
-          Be Fit For Benefit
-        </div>
-        <div class="right">
-          <ons-toolbar-button onclick="fn.open()">
-            <ons-icon icon="md-menu"></ons-icon>
-          </ons-toolbar-button>
-        </div>
-      </ons-toolbar>
+<ons-list-item onclick="rexRegisterForm()" tappable>Register</ons-list-item>
 
-     
+<ons-list-item onclick="rexPush('about.html')" tappable>About</ons-list-item>
 
-<ons-card>
-<img src="https://dummyimage.com/hd720" alt="any" style="width:100%">
-<div class="card__content">
-Location of the week of may be able to do you think you will be the first.
+<ons-list-item tappable>Contact</ons-list-item>
+</ons-list>
+</ons-page>
+</ons-splitter-side>
+<ons-splitter-content>
+<ons-navigator id="myNavigator" page="index.html"></ons-navigator>
+</ons-splitter-content>
+</ons-splitter>
+
+
+
+
+
+
+<ons-dialog cancelable id="form-register">
+<div class="rex-dialog">
+
+<p><ons-input type="email" placeholder="Email" required float></ons-input></p>
+<p><ons-input type="password" placeholder="Password" required float></ons-input><p>
+</p><ons-button onclick="rexRegisterBtn()">Create Account</ons-button></p>
+
+
 </div>
-</ons-card>
+</ons-dialog>
 
+
+
+
+
+
+<ons-dialog cancelable id="form-login">
+<div class="rex-dialog">
+
+<p><ons-input type="email" placeholder="Email" required float></ons-input></p>
+<p><ons-input type="password" placeholder="Password" required float></ons-input><p>
+</p><ons-button onclick="rexLoginBtn()">Login</ons-button></p>
+
+</div>
+</ons-dialog>
+
+
+
+
+
+
+
+
+<template id="index.html">
+ <ons-page>
+<ons-toolbar>
+<div class="center">Savrex Web Store</div>
+<div class="right">
+<ons-toolbar-button onclick="fn.open()">
+<ons-icon icon="md-menu"></ons-icon>
+</ons-toolbar-button>
+</div>
+</ons-toolbar>
+
+
+
+
+
+
+<ons-list id="items-list">
+
+</ons-list>
+ 
+
+
+ </ons-page>
+</template>
+
+
+<template id="p1.html">
+<ons-page>
+<ons-toolbar>
+<div class="left">
+<ons-back-button>Back</ons-back-button>
+</div>
+<div class="center">Go Back</div>
+</ons-toolbar>
 
 
 <ons-card>
- <div class="yt-div">
-<iframe class="yt-iframe" title="Featured Video of Be Fit For Benefit" src="https://www.youtube.com/embed/Q8M3K578oyM" allowfullscreen></iframe>
-    </div>
+<img src="im1.jpg">
+<br><br>
+<b>Rs. 750</b><br>
+Labour Welfare Laws Book
+
+<hr>
+
+<ons-button>Contact Seller</ons-button>
 </ons-card>
 
 
+<ons-card>
+<b>Description:</b> Look forward to hearing back from the publisher PDF format.
+</ons-card>
+
+</ons-page>
+</template>
+
+
+
+<template id="about.html">
+ <ons-page>
+<ons-toolbar>
+<div class="left">
+<ons-back-button>Back</ons-back-button>
+</div>
+<div class="center">About</div>
+<div class="right">
+<ons-toolbar-button onclick="fn.open()">
+<ons-icon icon="md-menu"></ons-icon>
+</ons-toolbar-button>
+</div>
+</ons-toolbar>
 
 
 
 
-
-
-
-    </ons-page>
-  </template>
-
-
+ </ons-page>
+</template>
 
 
  
@@ -96,27 +153,34 @@ Location of the week of may be able to do you think you will be the first.
 
 
 
+
+
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+
 <script>
-
-window.fn = {};
-
-window.fn.open = function () {
-var menu = document.getElementById('menu');
-menu.open();
+var firebaseConfig = {
+apiKey:"AIzaSyAQPD6_He01xtVIdZRM4eILYF50Y-g3EN8",
+authDomain:"savrex-db.firebaseapp.com",
+databaseURL:"https://savrex-db.firebaseio.com",
+projectId:"savrex-db",
+storageBucket:"savrex-db.appspot.com",
+messagingSenderId: "397611083612",
+appId: "1:397611083612:web:80751564bac4154e7f0399",
+measurementId:"G-DYKMRYSDWQ"
 };
 
+firebase.initializeApp(firebaseConfig);
 
-window.fn.load = function (page) {
-      var menu = document.getElementById('menu');
-      var myNavigator = document.getElementById('myNavigator');
+const auth = firebase.auth();
+const db = firebase.firestore();
 
-      menu.close();
-      myNavigator.resetToPage(page, { animation: 'fade' });
-    };
-
-  
+db.settings({ timestampsInSnapshots: true });
 
 
+</script>
 
-  </script>
+<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+<script src="app.js"></script>
 </body></html>
