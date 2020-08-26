@@ -1,0 +1,11 @@
+Savrex Web Store (HTML Website Template)
+
+Product main image
+Product name
+Product price
+Product old price
+Product description
+Product carousel 5 images
+Product video
+
+

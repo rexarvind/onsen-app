@@ -1,0 +1,175 @@
+<!doctype html> <html lang="en" dir="ltr">
+<head><meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin Page of Savrex Web Store</title>
+
+<link href="adcss.css" rel="stylesheet" type="text/css">
+
+</head><body> <div id="wrapper">
+
+
+<header id="header" class="flex flex-no-wrap justify-between items-center">
+
+<a href="#">
+
+<div id="logo" class="flex items-center">
+<img src="logo.webp" id="logo-icon" alt="Savrex Web Store Logo">
+
+<div id="logo-text">Admin&nbsp;Page
+<div id="logo-text-2">
+Savrex&nbsp;Web&nbsp;Store</div>
+</div>
+</div> </a>
+<!-- logo -->
+
+
+<input type="checkbox" id="nav-toggle">
+<label for="nav-toggle" id="nav-btn">
+<span id="hamburger"></span>
+</label>
+
+<nav id="nav">
+<ul id="list-nav">
+<li><a class="logged-in nav-link">Create</a></li>
+<li><a id="logout" class="logged-in nav-link">Logout</a></li>
+<li><a class="logged-out nav-link">Sign-up</a></li>
+<li><a class="logged-out nav-link">Login</a></li>
+</ul>
+</nav>
+</header>
+
+<div style="min-height:5.9rem"></div>
+
+
+
+<div class="section group">
+<div class="col s6">
+
+<div id="account-details"></div>
+<h1>Yup Something here to balance the forms</h1>
+<button class="btn">Login</button>
+<button class="btn">Signup</button>
+
+</div>
+
+<div class="col s6">
+
+<div id="signup-modal" class="logged-out">
+<form id="signup-form">
+
+<label for="signup-email">Email</label>
+<input type="email" name="email" id="signup-email" class="form-input" placeholder="Email" required/>
+
+<label for="signup-password">Password</label>
+<input type="password" name="password" id="signup-password" class="form-input" placeholder="Minimum 6 Characters" required/>
+
+<label for="signup-bio">Bio</label>
+<input type="text" name="bio" id="signup-bio" class="form-input" placeholder="Bio" required/>
+
+<button type="submit" class="btn">Signup</button>
+</form>
+</div> <!-- signup-modal -->
+
+
+<div id="login-modal" class="logged-out">
+<form id="login-form">
+
+<label for="login-email">Email</label>
+<input type="email" name="email" id="login-email" class="form-input" placeholder="Email" required />
+
+<label for="login-password">Password</label>
+<input type="password" name="password" id="login-password" class="form-input" placeholder="Minimum 6 Characters" required />
+
+<button type="submit" class="btn">Login</button>
+</form>
+</div> <!-- login-modal -->
+
+
+<div id="create-modal">
+<form id="create-form" autocomplete="off">
+
+<label for="create-title">Title</label>
+<input type="text" name="title" id="create-title" class="form-input" placeholder="Title of Guide" required />
+
+<label for="create-img1">Title</label>
+<input type="text" name="create-img1" id="create-img1" class="form-input" placeholder="Public Image URL" required />
+
+<progress value="0" max="100" id="uploader">0%</progress>
+<input type="file" value="upload" id="fileButton" />
+
+<label for="create-content">Content</label>
+<textarea id="create-content" name="content" class="form-textarea" placeholder="Content of the Guide" required></textarea>
+
+<button id="create-form-btn" type="submit" class="btn">Create Item</button>
+
+</form>
+</div> <!-- create-modal -->
+
+
+<div id="update-modal" style="display:none">
+<form id="update-form">
+
+<label for="update-id">Title</label>
+<input type="text" readonly="" name="id" id="update-id" class="form-input" required />
+
+<label for="update-title">Title</label>
+<input type="text" name="title" id="update-title" class="form-input" placeholder="Title of Guide" required />
+
+<label for="update-content">Content</label>
+<textarea id="update-content" name="content" class="form-textarea" placeholder="Content of the Guide" required></textarea>
+
+<button id="update-form-btn" type="submit" class="btn">Update Item</button>
+
+</form>
+</div> <!-- update-modal -->
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+<div class="section group">
+<div class="col s12">
+
+<h1>Guides</h1>
+
+<div id="guides"></div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div> <!-- wrapper complete -->
+
+<footer id="footer">
+Page Views: <span id="page-views">...</span>
+<br><span id="copy-year"></span> &copy;
+RexArvind Web Services<br>
+<a href="#" target="_blank" rel="noopener noreferrer">Designed by RexArvind</a>
+</footer>
+
+
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-storage.js"></script>
+
+<script src="adjs.js"></script>
+</body></html>
